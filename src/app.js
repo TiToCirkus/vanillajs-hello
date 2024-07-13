@@ -23,20 +23,20 @@ window.onload = () => {
     "while I was praying"
   ];
 
-  document.querySelector("#excuse").innerHTML =
-    RamdomIndex(who) +
-    RamdomIndex(action) +
-    RamdomIndex(what) +
-    RamdomIndex(when);
+  function newExcuse() {
+    return (
+      RamdomIndex(who) +
+      RamdomIndex(action) +
+      RamdomIndex(what) +
+      RamdomIndex(when)
+    );
+  }
+
+  document.querySelector("#excuse").innerHTML = newExcuse();
 
   let excuseButton = document.querySelector("#excuseGenerator");
 
   excuseButton.addEventListener("click", () => {
-    let newExcuse =
-      RamdomIndex(who) +
-      RamdomIndex(action) +
-      RamdomIndex(what) +
-      RamdomIndex(when);
-    document.querySelector("#excuse").innerHTML = newExcuse;
+    document.querySelector("#excuse").innerHTML = newExcuse();
   });
 };
